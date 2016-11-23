@@ -38,4 +38,7 @@ pathfinder = load_sprite(char_sheet, 448, 96, 32, 32)
 # --- skeleton ---
 skeleton = load_sprite(char_sheet, 577, 512, 32, 32)
 
+# --- basic powerup ---
+powerup = load_sprite(char_sheet, 448, 0, 32, 32)
+
 

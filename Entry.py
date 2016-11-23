@@ -52,7 +52,7 @@ level_hazards = level.load_hazards()
 player = Player(arcanist)
 
 # make enemies
-enemy_one = BasicEnemy(576, 272, skeleton)
+# enemy_one = BasicEnemy(576, 272, skeleton)
 
 """
 	game loop
@@ -80,7 +80,7 @@ while running:
 	if keys_pressed[K_DOWN]:
 		player.pos_update(0, player.ms, level_walls, level_hazards)
 
-	enemy_one.move_to_player(player.rect.x, player.rect.y)
+	# enemy_one.move_to_player(player.rect.x, player.rect.y)
 
 	# clear screen
 	screen.fill(WHITE)
@@ -89,7 +89,7 @@ while running:
 	screen.blit(level.level_image, [0, 0])
 
 	# draw enemies
-	screen.blit(enemy_one.sprite, [enemy_one.rect.x, enemy_one.rect.y])
+	# screen.blit(enemy_one.sprite, [enemy_one.rect.x, enemy_one.rect.y])
 	
 	# draw player
 	screen.blit(player.sprite, [player.rect.x, player.rect.y])
