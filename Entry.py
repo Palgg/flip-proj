@@ -13,6 +13,7 @@
 	6.) more sophisticated health system, visual indication of health
 	7.) make the rest of the god damn game
 	8.) maybe add town hub?
+	9.) add possible enemy spawns to map key
 """
 
 """
