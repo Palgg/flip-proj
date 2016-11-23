@@ -4,6 +4,7 @@
 """
 
 from pygame import Rect
+from SpriteData import skeleton
 
 class Player:
 
@@ -13,9 +14,16 @@ class Player:
 		self.rect = Rect(96, 352, 32, 32)
 		self.sprite = sprite
 		self.ms = 4
+		self.health = 100
+
+	# if player has no health, change sprite and ms
+	def check_dead(self):
+		if self.health <= 0:
+			self.sprite = skeleton
+			self.ms = 0
 
 	# update x and y of player based on input
-	def pos_update(self, x_off, y_off, walls):
+	def pos_update(self, x_off, y_off, walls, hazards):
 		self.rect.x += x_off
 		self.rect.y += y_off
 
@@ -29,3 +37,9 @@ class Player:
 					self.rect.bottom = wall.top
 				if y_off < 0: # moving up, hit bottom side of a wall
 					self.rect.top = wall.bottom
+
+		for hazard in hazards:
+			if (self.rect.colliderect(hazard)):
+				if self.health > 0:
+					self.health -= 0.5
+					print(self.health)
