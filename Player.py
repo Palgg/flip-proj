@@ -4,7 +4,7 @@
 """
 
 from pygame import Rect
-from SpriteData import skeleton
+from SpriteData import dead_player
 
 class Player:
 
@@ -19,7 +19,7 @@ class Player:
 	# if player has no health, change sprite and ms
 	def check_dead(self):
 		if self.health <= 0:
-			self.sprite = skeleton
+			self.sprite = dead_player
 			self.ms = 0
 
 	# update x and y of player based on input
@@ -42,4 +42,3 @@ class Player:
 			if (self.rect.colliderect(hazard)):
 				if self.health > 0:
 					self.health -= 0.5
-					print(self.health)

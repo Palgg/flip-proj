@@ -26,6 +26,8 @@ arena_level = pygame.image.load("res/maps/arena_1.png")
 """
 	SPRITES TO LOAD ONCE
 """
+# --- dead player ---
+dead_player = load_sprite(char_sheet, 96, 0, 32, 32)
 # --- fighter ---
 fighter = load_sprite(char_sheet, 160, 128, 32, 32)
 # --- arcanist ---

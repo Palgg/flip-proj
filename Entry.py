@@ -5,11 +5,11 @@
 
 """
 	--- TODO ---
-	2.) add logic for groups of entities (enemies, sprites, etc...)
-	4.) main menu
-	5.) other map elements like hazards, powerups, etc
-	6.) health bars
-	7.) upload to git and shit
+	1.) main menu
+	2.) add enemies group
+	5.) powerups, specific spawns, etc
+	6.) more sophisticated health system, visual indication of health
+	
 """
 
 """

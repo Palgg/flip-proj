@@ -4,7 +4,7 @@
 """
 
 from pygame import Rect
-from SpriteData import *
+from SpriteData import arena_level
 
 class ArenaMap:
 
