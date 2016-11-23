@@ -6,20 +6,23 @@
 """
 	--- TODO ---
 	1.) main menu
-	2.) add enemies group
-	5.) powerups, specific spawns, etc
+	2.) add enemies group, powerups group, etc (things that need to be drawn and may dissapear)
+	3.) powerup spawning/logic, timed event
+	4.) specific spawns for map, pass to player
+	5.) add damage for being in hazard and not moving
 	6.) more sophisticated health system, visual indication of health
-	
+	7.) make the rest of the god damn game
 """
 
 """
 	modules
 """
-import sys, pygame
+import sys, pygame, random
 from Player import *
 from BasicEnemy import *
 from ArenaMap import *
 from SpriteData import *
+from Powerup import *
 from pygame.locals import *
 
 """
@@ -43,16 +46,21 @@ pygame.init()
 screen = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption("Flip")
 
-# create the object that holds map data and load the wall rectangles
+# load the map and relevant data
 level = ArenaMap()
 level_walls = level.load_walls()
 level_hazards = level.load_hazards()
+level_powerups = level.load_powerups()
 
 # create the player
 player = Player(arcanist)
 
 # make enemies
 # enemy_one = BasicEnemy(576, 272, skeleton)
+
+# test powerup
+t_powerup_spawn_index = random.randint(0, len(level_powerups)-1)
+t_powerup = Powerup(level_powerups[t_powerup_spawn_index].x, level_powerups[t_powerup_spawn_index].y)
 
 """
 	game loop
@@ -87,6 +95,9 @@ while running:
 
 	# draw map
 	screen.blit(level.level_image, [0, 0])
+
+	# draw powerups
+	screen.blit(t_powerup.sprite, [t_powerup.x, t_powerup.y])
 
 	# draw enemies
 	# screen.blit(enemy_one.sprite, [enemy_one.rect.x, enemy_one.rect.y])

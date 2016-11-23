@@ -13,7 +13,7 @@ class ArenaMap:
 	# 1 = wall
 	# 2 = hazard
 	# 3 = powerup
-	# 4 = spawn
+	# 4 = char spawn
 	def __init__(self):
 		self.level_image = arena_level
 		self.width = 40
@@ -77,3 +77,21 @@ class ArenaMap:
 				j+=1
 			i+=1
 		return hazards
+
+	# generic function that returns the list of powerup spawns from the map key
+	def load_powerups(self):
+		i = 0
+		j = 0
+		index = 0
+		powerups = []
+		
+		while i < self.height:
+			j=0
+			while j < self.width:
+				if index < len(self.key):
+					if self.key[index] == 3:
+						powerups.append(Rect(j*32, i*32, 32, 32))
+					index+=1
+				j+=1
+			i+=1
+		return powerups
