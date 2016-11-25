@@ -5,6 +5,7 @@
 
 """
 	--- TODO ---
+	1.) FIX DUNGEON FLOOR TILE THAT DRAWS UNDER POWERUPS
 	1.) main menu
 	2.) add enemies group, powerups group, etc (things that need to be drawn and may dissapear)
 	3.) powerup spawning/logic, timed event
@@ -15,6 +16,7 @@
 	8.) maybe add town hub?
 	9.) add possible enemy spawns to map key
 	10.) add brick tile under the powerup spawn location
+	11.) probably need to make assets for numbers/letters for the UI
 """
 
 """
@@ -59,7 +61,7 @@ level_powerups = level.load_powerups()
 player = Player(fighter)
 
 # make enemies
-enemy_one = BasicEnemy(576, 272, skeleton)
+#enemy_one = BasicEnemy(576, 272, skeleton)
 
 # test powerup
 t_powerup_spawn_index = random.randint(0, len(level_powerups)-1)
@@ -91,7 +93,7 @@ while running:
 	if keys_pressed[K_DOWN]:
 		player.pos_update(0, player.ms, level_walls, level_hazards)
 
-	enemy_one.move_to_player(player.rect.x, player.rect.y)
+	#enemy_one.move_to_player(player.rect.x, player.rect.y)
 
 	# clear screen
 	screen.fill(WHITE)
@@ -100,10 +102,11 @@ while running:
 	screen.blit(level.level_image, [0, 0])
 
 	# draw powerups
-	screen.blit(t_powerup.sprite, [t_powerup.x, t_powerup.y])
+	screen.blit(floor_default, [t_powerup.x, t_powerup.y])
+	screen.blit(t_powerup.sprite, [t_powerup.x, t_powerup.y-5])
 
 	# draw enemies
-	screen.blit(enemy_one.sprite, [enemy_one.rect.x, enemy_one.rect.y])
+	#screen.blit(enemy_one.sprite, [enemy_one.rect.x, enemy_one.rect.y])
 	
 	# draw player
 	screen.blit(player.sprite, [player.rect.x, player.rect.y])

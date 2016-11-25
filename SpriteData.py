@@ -15,6 +15,7 @@ def load_sprite(sheet, x_loc, y_loc, h, w):
 	SPRITESHEETS
 """
 char_sheet = pygame.image.load("res/tilesets/dc-mon.png")
+dngn_sheet = pygame.image.load("res/tilesets/dc-dngn.png")
 
 """
 	LEVELS
@@ -22,6 +23,10 @@ char_sheet = pygame.image.load("res/tilesets/dc-mon.png")
 debug_level = pygame.image.load("res/maps/debug_map.png")
 arena_level = pygame.image.load("res/maps/arena_1.png")
 
+"""
+	FLOOR TILES
+"""
+floor_default = load_sprite(dngn_sheet, 11, 0, 32, 32)
 
 """
 	SPRITES TO LOAD ONCE

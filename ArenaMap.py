@@ -1,8 +1,6 @@
 """
 	--- ArenaMap class ---
 	holds all of the information regarding walls, hazards, spawns for arena_map.png
-
-	HI MOM
 """
 
 from pygame import Rect
