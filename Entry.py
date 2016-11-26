@@ -5,6 +5,7 @@
 
 """
 	--- TODO ---
+	1.) abstract powerup spawn generation to the Powerup class file
 	1.) MAKE POWERUPS A TIMED EVENT TRIGGER
 	1.) FIX DUNGEON FLOOR TILE THAT DRAWS UNDER POWERUPS
 	1.) main menu
@@ -42,7 +43,7 @@ WHITE = (255, 255, 255)
 """
 # 40 tiles wide, 23 tiles tall
 screen_width = 1280
-screen_height = 736
+screen_height = 800
 # for control of how fast screen updates
 clock = pygame.time.Clock()
 
