@@ -18,14 +18,19 @@ class Player:
 
 	# if player has no health, change sprite and ms
 	def check_dead(self):
+		print self.health
 		if self.health <= 0:
 			self.sprite = dead_player
 			self.ms = 0
 
 	# update x and y of player based on input
-	def pos_update(self, x_off, y_off, walls, hazards):
+	def pos_update(self, x_off, y_off, walls, hazards, powerup):
 		self.rect.x += x_off
 		self.rect.y += y_off
+
+		if self.rect.colliderect(powerup.rect):
+			self.health += powerup.p_give_buff()
+			powerup.status = 2
 
 		for wall in walls:
 			if (self.rect.colliderect(wall)):

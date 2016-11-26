@@ -26,7 +26,7 @@ arena_level = pygame.image.load("res/maps/arena_1.png")
 """
 	FLOOR TILES
 """
-floor_default = load_sprite(dngn_sheet, 11, 0, 32, 32)
+floor_default = load_sprite(dngn_sheet, 64, 0, 32, 32)
 
 """
 	SPRITES TO LOAD ONCE
