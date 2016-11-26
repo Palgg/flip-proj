@@ -41,6 +41,9 @@ WHITE = (255, 255, 255)
 """
 	vars
 """
+# game states
+STATE_MENU = 0
+STATE_PLAY = 1
 # 40 tiles wide, 23 tiles tall
 screen_width = 1280
 screen_height = 800
@@ -53,6 +56,9 @@ clock = pygame.time.Clock()
 pygame.init()
 screen = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption("Flip")
+
+# set initial state
+game_state = STATE_MENU
 
 # load the map and relevant data
 level = ArenaMap()
