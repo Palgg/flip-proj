@@ -5,7 +5,7 @@
 
 """
 	--- TODO ---
-	1.) MAKE POWERUPS A TIMED EVENT TRIGGER 
+	1.) MAKE POWERUPS A TIMED EVENT TRIGGER
 	1.) FIX DUNGEON FLOOR TILE THAT DRAWS UNDER POWERUPS
 	1.) main menu
 	2.) add enemies group, powerups group, etc (things that need to be drawn and may dissapear)
@@ -105,7 +105,8 @@ while running:
 
 	# draw powerups
 	if powerup.status == P_ACTIVE:
-		screen.blit(floor_default, [powerup.x, powerup.y])
+		powerup.animate()
+		screen.blit(floor_default, [powerup.og_x, powerup.og_y])
 		screen.blit(powerup.sprite, [powerup.x, powerup.y])
 	elif powerup.status == P_INACTIVE:
 		powerup.x = 0
