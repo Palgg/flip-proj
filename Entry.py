@@ -31,6 +31,7 @@ from BasicEnemy import *
 from ArenaMap import *
 from SpriteData import *
 from Powerup import *
+from StartMenu import *
 from pygame.locals import *
 
 """
@@ -41,10 +42,7 @@ WHITE = (255, 255, 255)
 """
 	vars
 """
-# game states
-STATE_MENU = 0
-STATE_PLAY = 1
-# 40 tiles wide, 23 tiles tall
+# 40 tiles wide, 25 tiles tall
 screen_width = 1280
 screen_height = 800
 # for control of how fast screen updates
@@ -56,9 +54,6 @@ clock = pygame.time.Clock()
 pygame.init()
 screen = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption("Flip")
-
-# set initial state
-game_state = STATE_MENU
 
 # load the map and relevant data
 level = ArenaMap()
