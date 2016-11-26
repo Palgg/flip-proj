@@ -46,4 +46,7 @@ skeleton = load_sprite(char_sheet, 577, 512, 32, 32)
 # --- basic powerup ---
 powerup = load_sprite(char_sheet, 448, 0, 32, 32)
 
+# --- skills ---
+warden_skill_one = pygame.image.load("res/skills/rock-acid-2.png")
+warden_skill_icons = [warden_skill_one]
 

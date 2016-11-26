@@ -5,6 +5,7 @@
 
 """
 	--- TODO ---
+	1.) finish basic skill implementation
 	1.) abstract powerup spawn generation to the Powerup class file
 	1.) MAKE POWERUPS A TIMED EVENT TRIGGER
 	1.) FIX DUNGEON FLOOR TILE THAT DRAWS UNDER POWERUPS
@@ -31,7 +32,6 @@ from BasicEnemy import *
 from ArenaMap import *
 from SpriteData import *
 from Powerup import *
-from StartMenu import *
 from pygame.locals import *
 
 """
@@ -60,6 +60,9 @@ level = ArenaMap()
 level_walls = level.load_walls()
 level_hazards = level.load_hazards()
 level_powerups = level.load_powerups()
+
+# load the skill UI spawns
+
 
 # create the player
 player = Player(fighter)

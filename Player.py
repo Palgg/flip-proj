@@ -1,10 +1,18 @@
 """
 	--- Player class ---
-	holds all player information
+	holds all player information and the Skill class
 """
 
 from pygame import Rect
-from SpriteData import dead_player
+from SpriteData import dead_player, warden_skill_icons
+
+class Skill:
+
+	# create the skill, assign properties
+	def __init__(self, name, sprite, cooldown):
+		self.name = name
+		self.sprite = sprite
+		self.cooldown = cooldown
 
 class Player:
 
@@ -15,6 +23,8 @@ class Player:
 		self.sprite = sprite
 		self.ms = 4
 		self.health = 100
+		self.spec = "Warden"
+		self.skills = [Skill("Boulder Toss", warden_skill_icons[0], 0)]
 
 	# if player has no health, change sprite and ms
 	def check_dead(self):
